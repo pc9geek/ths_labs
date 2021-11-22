@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Layout</title>
+    <Style>
+        :root{
+        --warm-red: crimson;
+        }
+        body{
+            background-color: var(--warm-red);
+        }
+        body > *{
+            background-color: white;
+            padding: 1em;
+            font-family:Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+        body{
+            display:grid;
+            grid-gap:1em;
+            grid-template-rows: auto auto 1fr auto;
+            min-height:100vh;
+        }
+        @media (min-width:40em){
+            body{
+                grid-template-columns: 12em 1fr;
+                grid-template-rows: auto 1fr auto;
+            }
+            header{
+                grid-column: span 2;
+            }
+            footer{
+                grid-row: span 2;
+            }
+        }        
+    </Style>
+</head>
+<body>
+    <header>
+        <h1>Header</h1>
+    </header>
+    <nav>
+        <ul>
+            <li>nav</li>
+            <li>nav</li>
+            <li>nav</li>
+            <li>nav</li>
+        </ul>
+    </nav>
+    <main>
+        <h2>Main</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia obcaecati molestias impedit a similique aspernatur distinctio vitae reiciendis perspiciatis sed dolorum delectus, eum ut cumque eius quasi adipisci sit molestiae rerum. Voluptates consectetur quod alias cupiditate. Quod est nam praesentium perferendis hic earum magni nihil esse, ducimus blanditiis et magnam.</p>
+    </main>
+    <footer>
+        <h2>Footer</h2>
+    </footer>
+    
+</body>
+</html>
