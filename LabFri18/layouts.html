@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .multiColumn {
+            column-fill: balance;
+            column-gap: 20px;
+            column-rule-color: blue;
+            column-rule-style: solid;
+            column-rule-width: 2px;
+            column-span: all;
+            column-width: auto;
+            column-rule: 1px solid black;
+            columns: auto 3;
+
+            /* CSS Fragmentation */
+            box-decoration-break: unset;
+            break-after: avoid;
+            break-before: avoid-page;
+            break-inside: avoid;
+            orphans: 3;
+            /* Min number of lines shown at bottom of page*/
+            widows: 3;
+            /* Min number of lines shown at top of page */
+
+            padding: 0px 10px 20px 10px;
+
+        }
+
+        @media only screen and (max-width: 599px) {
+            .multiColumn {
+                column-count: 1;
+            }
+        }
+        @media only screen and (min-width: 600px) and (max-width: 768px) {
+            .multiColumn {
+                column-count: 2;
+            }
+        }
+        @media only screen and (min-width: 769px) and (max-width: 1024px) {
+            .multiColumn {
+                column-count: 3;
+            }
+        }
+
+
+        .multiColumn>* {
+            margin: 10px 10px 10px 10px
+        }
+
+        .flexContainer {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            flex-flow: row wrap;
+        }
+
+        article {
+            min-width: 200px;
+            flex: 200px;
+            padding: 10px;
+        }
+
+        .spinner{
+            position:absolute;
+            width:150px;
+            height:250px;
+            left:100px;
+            top:100px;
+            background-color: turquoise;
+        }
+        @keyframes spin{
+            from{
+                transform: rotate(0deg);
+            }
+            to{
+                transform: rotate(180deg);
+            }
+        }
+        .spinner:hover{
+            /*transform: rotate(45deg);
+            transition: linear 2s;
+            */
+            animation-timing-function: linear;
+            animation-duration:2s;
+            animation-name:spin;
+            animation-iteration-count: infinite;
+        }
+        .slideMenu{
+            position:fixed;
+            width:300px;
+            height:400px;
+            left:-300px;
+            top:100px;
+            background-color: darkblue;
+           
+        }
+        .slideMenu:hover{
+            transform: translate(300px);
+            transition:1s;
+        }
+        #menuBody{
+            width:250px;
+            color:white;
+            padding:20px;
+        }
+        #menuTab{   
+            float:right;  
+            margin-right:-40px;       
+            margin-top:10px;
+            padding:10px;
+            background-color: darkblue;            
+            color:white;
+            transform:rotate(90deg);
+            border-radius: 10px;;
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="spinner"></div>
+    <h1>Multi Column Layouts</h1>
+    <section class="multiColumn">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto consequatur nam consequuntur, dolores
+            officiis laudantium asperiores maxime cum nisi ab.</p>
+        <img src='https://via.placeholder.com/150' />
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima ipsa cum, facere fugiat quae ab ducimus
+            suscipit amet, ad odio consequuntur asperiores quas esse tempore eveniet! Et unde doloribus suscipit tempore
+            hic earum, velit fuga nostrum, laudantium saepe provident, deleniti ullam aspernatur. Quis sunt
+            necessitatibus maxime numquam ducimus, pariatur beatae, modi vel molestias fugiat dolorum cum optio
+            repudiandae, quia sint vitae iste illo dignissimos voluptate. Perspiciatis tempora itaque, excepturi fuga
+            neque sit consequuntur asperiores cumque. Atque, earum? Possimus rem reprehenderit facilis sint delectus ea
+            incidunt voluptatum sequi similique voluptatem veritatis tempora eligendi iure velit alias, ut aperiam
+            blanditiis? Incidunt iusto eligendi reprehenderit voluptatum suscipit alias, iure assumenda tenetur non
+            sint? Animi eum ipsum voluptates ex neque dignissimos doloremque, excepturi numquam aspernatur commodi
+            debitis ab quos qui facilis laudantium enim fuga asperiores. Sint explicabo distinctio, porro dignissimos
+            harum officia est obcaecati fuga nihil neque cum, temporibus labore corrupti sed, quia laborum perspiciatis
+            minus eaque commodi! Excepturi, dolores. Deserunt omnis ea quam repudiandae sint temporibus blanditiis
+            labore magnam itaque ipsum, excepturi, nemo maiores cupiditate animi illo ipsa vero et distinctio doloribus
+            numquam! Nostrum, voluptatem sint? Similique, est incidunt quod ratione nulla animi rem quos soluta et!
+            Neque facere aliquam facilis non eligendi?</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim debitis minus eveniet quos nam porro delectus
+            hic, non perferendis aliquid et sed. Aspernatur quae neque velit ad quod et distinctio.</p>
+
+    </section>
+
+
+    <section class="flexContainer">
+        <article>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto consequatur nam consequuntur,
+            dolores officiis laudantium asperiores maxime cum nisi ab.</article>
+        <article>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima ipsa cum, facere fugiat quae ab
+            ducimus suscipit amet, ad odio consequuntur asperiores quas esse tempore eveniet! Et unde doloribus suscipit
+            tempore hic earum, velit fuga nostrum, laudantium saepe provident, deleniti ullam aspernatur. Quis sunt
+            necessitatibus maxime numquam ducimus, pariatur beatae, modi vel molestias fugiat dolorum cum optio
+            repudiandae, quia sint vitae iste illo dignissimos voluptate. Perspiciatis tempora itaque, excepturi fuga
+            neque sit consequuntur asperiores cumque. Atque, earum? Possimus rem reprehenderit facilis sint delectus ea
+            incidunt voluptatum sequi similique voluptatem veritatis tempora eligendi iure velit alias, ut aperiam
+            blanditiis? Incidunt iusto eligendi reprehenderit voluptatum suscipit alias, iure assumenda tenetur non
+            sint? Animi eum ipsum voluptates ex neque dignissimos doloremque, excepturi numquam aspernatur commodi
+            debitis ab quos qui facilis laudantium enim fuga asperiores. Sint explicabo distinctio, porro dignissimos
+            harum officia est obcaecati fuga nihil neque cum, temporibus labore corrupti sed, quia laborum perspiciatis
+            minus eaque commodi! Excepturi, dolores. Deserunt omnis ea quam repudiandae sint temporibus blanditiis
+            labore magnam itaque ipsum, excepturi, nemo maiores cupiditate animi illo ipsa vero et distinctio doloribus
+            numquam! Nostrum, voluptatem sint? Similique, est incidunt quod ratione nulla animi rem quos soluta et!
+            Neque facere aliquam facilis non eligendi?</article>
+        <article>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim debitis minus eveniet quos nam porro
+            delectus hic, non perferendis aliquid et sed. Aspernatur quae neque velit ad quod et distinctio.</article>
+
+    </section>
+    <div class="slideMenu">
+        <div id="menuTab">Menu</div>
+        <div id="menuBody">Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto molestiae harum asperiores nemo! Adipisci qui nam quisquam, dolor nesciunt temporibus illum impedit? Quis ipsa, excepturi dolor aut sint soluta veritatis corrupti. Aliquam eius, blanditiis nostrum sit ullam fugit laudantium, aperiam quos corrupti aspernatur atque repellendus consequuntur quia necessitatibus autem. Saepe ullam tempore illo praesentium facere! Ab reiciendis nesciunt, soluta incidunt est illum iure aut quo officia, voluptas accusamus? Odit repellat iure minus quibusdam, dolore, dignissimos quis doloremque quisquam in sequi enim facilis amet repellendus itaque! Animi maxime alias ad, blanditiis repellat quis cum fuga tempore fugit minima, asperiores delectus reiciendis!</div>
+    </div>
+</body>
+
+</html>
